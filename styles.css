@@ -1,0 +1,166 @@
+/* Base styles (light mode by default) */
+body {
+  margin: 0;
+  padding: 0 5%;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #eaeaea;
+  color: #222;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark mode override */
+body.dark-mode {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+h2 {
+  color: #4a90e2;
+}
+
+table,
+figure,
+.styled-image {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Optional: invert table/figure backgrounds in dark mode */
+body.dark-mode table,
+body.dark-mode figure {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  border-color: #444;
+}
+
+/* Style all sections */
+section {
+  margin-bottom: 2rem;
+}
+
+/* Style all paragraphs */
+p {
+  margin-bottom: 1rem;
+}
+
+/* Info box styling */
+.info-box {
+  border: 1px solid #333;
+  padding: 1rem;
+  margin: 2rem 0;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+}
+
+.info-box h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #222;
+}
+
+.info-box p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Dark mode override for .info-box */
+body.dark-mode .info-box {
+  background-color: #2a2a2a;
+  border-color: #555;
+  color: #e0e0e0;
+}
+
+body.dark-mode .info-box h2 {
+  color: #e0e0e0;
+}
+
+body.dark-mode .info-box p {
+  color: #e0e0e0;
+}
+
+/* Styled image */
+.styled-image {
+  border: 1px solid #ccc;
+  padding: 6px;
+  margin: 12px 0;
+  max-width: 100%;
+  height: auto;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+  display: block;
+}
+
+/* Dark mode override for .styled-image */
+body.dark-mode .styled-image {
+  background-color: #1e1e1e;
+  border-color: #555;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Global table styling */
+table {
+  width: 95%;
+  max-width: 800px;
+  margin: 1.5rem auto;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #ccc;
+}
+
+/* Table headers */
+th {
+  background-color: #f2f2f2;
+  text-align: left;
+  padding: 10px;
+  border-bottom: 2px solid #ccc;
+  font-weight: bold;
+  border-top: 1px solid #ccc;
+}
+
+/* Table cells */
+td {
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Optional: zebra striping for rows */
+tr:nth-child(even) td {
+  background-color: #fafafa;
+}
+
+/* Figcaption styling */
+figcaption {
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-top: 6px;
+  color: #444;
+  border-left: 4px solid #4a90e2;
+  padding-left: 10px;
+}
+
+/* Dark mode override for figcaption */
+body.dark-mode figcaption {
+  color: #ccc;
+  border-left-color: #4a90e2;
+}
+
+/* Network section (legacy) */
+.network-section {
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  background-color: #fff;
+  border-radius: 6px;
+}
+
+/* Dark mode override for .network-section */
+body.dark-mode .network-section {
+  background-color: #2a2a2a;
+  border-color: #555;
+  color: #e0e0e0;
+}
