@@ -164,3 +164,7 @@ body.dark-mode .network-section {
   border-color: #555;
   color: #e0e0e0;
 }
+
+.figure-color {
+  color: #4a90e2;
+}
