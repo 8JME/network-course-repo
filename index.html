@@ -94,8 +94,8 @@
           interconnect links to form a larger network. A switch is a
           multi-input, multi-output device that transfers packets from an input
           to one or more outputs. Thus, a switch adds the star topology (see
-          <span class="figure">Figure 3.1</span>) to the set of possible network
-          structures. A star topology has several attractive properties:
+          <span class="figure-color">Figure 3.1</span>) to the set of possible
+          network structures. A star topology has several attractive properties:
         </p>
         <ul>
           <li>
@@ -218,7 +218,7 @@
           every packet enough information to enable any switch to decide how to
           get it to its destination. That is, every packet contains the complete
           desti nation address. Consider the example network illustrated in
-          <span class="figure">Figure 3.2</span>, in which the hosts have
+          <span class="figure-color">Figure 3.2</span>, in which the hosts have
           addresses A, B, C, and so on. To decide how to forward a packet, a
           switch consults a forwarding table (sometimes called a routing table),
           an example of which is depicted in Table 3.1. This particular table
@@ -338,10 +338,10 @@
           connection-oriented model, requires setting up a virtual connection
           from the source host to the destination host before any data is sent.
           To understand how this works, consider
-          <span class="figure">Figure 3.3</span>, where host A again wants to
-          send packets to host B. We can think of this as a two-stage process.
-          The first stage is “connection setup.” The second is data transfer. We
-          consider each in turn.
+          <span class="figure-color">Figure 3.3</span>, where host A again wants
+          to send packets to host B. We can think of this as a two-stage
+          process. The first stage is “connection setup.” The second is data
+          transfer. We consider each in turn.
         </p>
         <p>
           In the connection setup phase, it is necessary to establish a
@@ -422,8 +422,8 @@
           Let’s assume that a network administrator wants to manually create a
           new virtual connection from host A to host B. First, the administrator
           needs to identify a path through the network from A to B. In the
-          example network of <span class="figure">Figure 3.3</span>, there is
-          only one such path, but in general, this may not be the case. The
+          example network of <span class="figure-color">Figure 3.3</span>, there
+          is only one such path, but in general, this may not be the case. The
           administrator then picks a VCI value that is currently unused on each
           link for the connection. For the purposes of our example, let’s
           suppose that the VCI value 5 is chosen for the link from host A to
@@ -518,21 +518,22 @@
 
         <p>
           Once the VC tables have been set up, the data transfer phase can
-          proceed, as illustrated in <span class="figure">Figure 3.4</span>. For
-          any packet that it wants to send to host B, A puts the VCI value of 5
-          in the header of the packet and sends it to switch 1. Switch 1
-          receives any such packet on interface 2, and it uses the combination
-          of the interface and the VCI in the packet header to find the
-          appropriate VC table entry. As shown in Table 3.2, the table entry in
-          this case tells switch 1 to forward the packet out of interface 1 and
-          to put the VCI value 11 in the header when the packet is sent. Thus,
-          the packet will arrive at switch 2 on interface 3 bearing VCI 11.
-          Switch 2 looks up interface 3 and VCI 11 in its VC table (as shown in
-          Table 3.3) and sends the packet on to switch 3 after updating the VCI
-          value in the packet header appropriately, as shown in
-          <span class="figure">Figure 3.5</span>. This process continues until
-          it arrives at host B with the VCI value of 4 in the packet. To host B,
-          this identifies the packet as having come from host A.
+          proceed, as illustrated in
+          <span class="figure-color">Figure 3.4</span>. For any packet that it
+          wants to send to host B, A puts the VCI value of 5 in the header of
+          the packet and sends it to switch 1. Switch 1 receives any such packet
+          on interface 2, and it uses the combination of the interface and the
+          VCI in the packet header to find the appropriate VC table entry. As
+          shown in Table 3.2, the table entry in this case tells switch 1 to
+          forward the packet out of interface 1 and to put the VCI value 11 in
+          the header when the packet is sent. Thus, the packet will arrive at
+          switch 2 on interface 3 bearing VCI 11. Switch 2 looks up interface 3
+          and VCI 11 in its VC table (as shown in Table 3.3) and sends the
+          packet on to switch 3 after updating the VCI value in the packet
+          header appropriately, as shown in
+          <span class="figure-color">Figure 3.5</span>. This process continues
+          until it arrives at host B with the VCI value of 4 in the packet. To
+          host B, this identifies the packet as having come from host A.
         </p>
         <p>
           In real networks of reasonable size, the burden of configuring VC
@@ -761,7 +762,7 @@
           The approach ATM takes has some interesting properties, which makes it
           worth examining a bit further. The picture of the ATM packet
           format—more commonly called an ATM cell—in
-          <span class="figure">Figure 3.6</span> will illustrate the main
+          <span class="figure-color">Figure 3.6</span> will illustrate the main
           points. We’ll skip the generic flow control (GFC) bits, which never
           saw much use, and start with the 24 bits that are labelled VPI
           (virtual path identifier—8 bits) and VCI (virtual circuit
@@ -883,7 +884,7 @@
           on. One way to do this would be to put an ordered list of switch ports
           in the header and to rotate the list so that the next switch in the
           path is always at the front of the list.
-          <span class="figure">Figure 3.7</span> illustrates this idea.
+          <span class="figure-color">Figure 3.7</span> illustrates this idea.
         </p>
         <figure>
           <img
@@ -1031,11 +1032,11 @@
         <p>
           The first optimization we can make to a bridge is to observe that it
           need not forward all frames that it receives. Consider the bridge in
-          <span class="figure">Figure 3.9</span>. Whenever a frame from host A
-          that is addressed to host B arrives on port 1, there is no need for
-          the bridge to forward the frame out over port 2. The question, then,
-          is how does a bridge come to learn on which port the various hosts
-          reside?
+          <span class="figure-color">Figure 3.9</span>. Whenever a frame from
+          host A that is addressed to host B arrives on port 1, there is no need
+          for the bridge to forward the frame out over port 2. The question,
+          then, is how does a bridge come to learn on which port the various
+          hosts reside?
         </p>
         <p>
           One option would be to have a human download a table into the bridge
@@ -1196,8 +1197,8 @@
           The preceding strategy works just fine until the network has a loop in
           it, in which case it fails in a horrible way—frames potentially get
           forwarded forever. This is easy to see in the example depicted in
-          <span class="figure">Figure 3.10</span>, where switches S1, S4, and S6
-          form a loop.
+          <span class="figure-color">Figure 3.10</span>, where switches S1, S4,
+          and S6 form a loop.
         </p>
         <figure>
           <img
@@ -1248,9 +1249,9 @@
           spanning tree is a subgraph of this graph that covers (spans) all the
           vertices but contains no cycles. That is, a spanning tree keeps all of
           the vertices of the original graph but throws out some of the edges.
-          For example, <span class="figure">Figure 3.11</span>shows a cyclic
-          graph on the left and one of possibly many spanning trees on the
-          right.
+          For example, <span class="figure-color">Figure 3.11</span>shows a
+          cyclic graph on the left and one of possibly many spanning trees on
+          the right.
         </p>
         <figure>
           <img
@@ -1330,10 +1331,10 @@
           </figure>
 
           <p>
-            <span class="figure">Figure 3.12</span>shows the spanning tree that
-            corresponds to the network shown in
-            <span class="figure">Figure 3.10</span>. In this example, S1 is the
-            root, since it has the smallest ID. Notice that S3 and S5 are
+            <span class="figure-color">Figure 3.12</span>shows the spanning tree
+            that corresponds to the network shown in
+            <span class="figure-color">Figure 3.10</span>. In this example, S1
+            is the root, since it has the smallest ID. Notice that S3 and S5 are
             connected to each other, but S5 is the designated switch since it is
             closer to the root. Similarly, S5 and S7 are connected to each
             other, but in this case S5 is the designated switch since it has the
@@ -1343,8 +1344,9 @@
 
         <p>
           While it is possible for a human to look at the network given in
-          <span class="figure">Figure 3.10</span> and to compute the spanning
-          tree given in the <span class="figure">Figure 3.12</span>
+          <span class="figure-color">Figure 3.10</span> and to compute the
+          spanning tree given in the
+          <span class="figure-color">Figure 3.12</span>
           according to the rules given above, the switches do not have the
           luxury of being able to see the topology of the entire network, let
           alone peek inside other switches to see their ID. Instead, they have
@@ -1418,12 +1420,12 @@
         </p>
         <p>
           Let’s see how this works with an example. Consider what would happen
-          in <span class="figure">Figure 3.12</span>if the power had just been
-          restored to a campus, so that all the switches boot at about the same
-          time. All the switches would start off by claiming to be the root. We
-          denote a configuration message from node X in which it claims to be
-          distance d from root node Y as (Y,d,X). Focusing on the activity at
-          S3, a sequence of events would unfold as follows:
+          in <span class="figure-color">Figure 3.12</span>if the power had just
+          been restored to a campus, so that all the switches boot at about the
+          same time. All the switches would start off by claiming to be the
+          root. We denote a configuration message from node X in which it claims
+          to be distance d from root node Y as (Y,d,X). Focusing on the activity
+          at S3, a sequence of events would unfold as follows:
         </p>
         <ol>
           <li>S3 receives (S2, 0, S2).</li>
@@ -1445,8 +1447,8 @@
         </ol>
         <p>
           This leaves S3 with active ports as shown in
-          <span class="figure">Figure 3.12</span>. Note that Hosts A an B are
-          not able to commu nication over the shortest path (via S5) because
+          <span class="figure-color">Figure 3.12</span>. Note that Hosts A an B
+          are not able to commu nication over the shortest path (via S5) because
           frames have to “flow up the tree and back down,” but that’s the price
           you pay to avoid loops.
         </p>
@@ -1544,7 +1546,7 @@
 
         <p>
           We can see how VLANs work with an example.
-          <span class="figure">Figure 3.13</span> shows four hosts and two
+          <span class="figure-color">Figure 3.13</span> shows four hosts and two
           switches. In the absence of VLANs, any broadcast packet from any host
           will reach all the other hosts. Now let’s suppose that we define the
           segments connected to hosts W and X as being in one VLAN, which we’ll
@@ -1578,7 +1580,7 @@
           Supporting VLANs requires a fairly simple extension to the original
           802.1 header specification, inserting a 12-bit VLAN ID (VID) field
           between the SrcAddr and Type fields, as shown in
-          <span class="figure">Figure 3.14</span>. (This VID is typically
+          <span class="figure-color">Figure 3.14</span>. (This VID is typically
           referred to as a VLAN Tag.) There are actually 32-bits inserted in the
           middle of the header, but the first 16-bits are used to preserve
           backwards compatibility with the original specification (they use Type
@@ -1670,14 +1672,14 @@
         </figure>
 
         <p>
-          <span class="figure">Figure 3.15</span> shows an example internetwork.
-          An internetwork is often referred to as a “network of networks”
-          because it is made up of lots of smaller networks. In this figure, we
-          see Ethernets, a wireless network, and a point-to-point link. Each of
-          these is a single-technology network. The nodes that interconnect the
-          networks are called routers. They are also sometimes called gateways,
-          but since this term has several other connotations, we restrict our
-          usage to router.
+          <span class="figure-color">Figure 3.15</span> shows an example
+          internetwork. An internetwork is often referred to as a “network of
+          networks” because it is made up of lots of smaller networks. In this
+          figure, we see Ethernets, a wireless network, and a point-to-point
+          link. Each of these is a single-technology network. The nodes that
+          interconnect the networks are called routers. They are also sometimes
+          called gateways, but since this term has several other connotations,
+          we restrict our usage to router.
         </p>
         <p>
           The <strong><em>Internet Protocol</em></strong> is the key tool used
@@ -1687,11 +1689,11 @@
           routers) in a collection of networks and defines the infrastructure
           that allows these nodes and networks to function as a single logical
           internetwork. For example,
-          <span class="figure">Figure 3.16</span> shows how hosts H5 and H8 are
-          logically connected by the internet in
-          <span class="figure">Figure 3.15</span>, including the protocol graph
-          running on each node. Note that higher-level protocols, such as TCP
-          and UDP, typically run on top of IP on the hosts.
+          <span class="figure-color">Figure 3.16</span> shows how hosts H5 and
+          H8 are logically connected by the internet in
+          <span class="figure-color">Figure 3.15</span>, including the protocol
+          graph running on each node. Note that higher-level protocols, such as
+          TCP and UDP, typically run on top of IP on the hosts.
         </p>
         <figure>
           <img
@@ -2000,15 +2002,15 @@
         <p>
           To see what this all means, consider what happens when host H5 sends a
           datagram to host H8 in the example internet shown in
-          <span class="figure">Figure 3.15</span>. Assuming that the MTU is 1500
-          bytes for the two Ethernets and the 802.11 network, and 532 bytes for
-          the point-to-point network, then a 1420-byte datagram (20-byte IP
-          header plus 1400 bytes of data) sent from H5 makes it across the
-          802.11 network and the first Ethernet without fragmen tation but must
-          be fragmented into three datagrams at router R2. These three fragments
-          are then forwarded by router R3 across the second Ethernet to the
-          destination host. This situation is illustrated in
-          <span class="figure">Figure 3.18</span>.
+          <span class="figure-color">Figure 3.15</span>. Assuming that the MTU
+          is 1500 bytes for the two Ethernets and the 802.11 network, and 532
+          bytes for the point-to-point network, then a 1420-byte datagram
+          (20-byte IP header plus 1400 bytes of data) sent from H5 makes it
+          across the 802.11 network and the first Ethernet without fragmen
+          tation but must be fragmented into three datagrams at router R2. These
+          three fragments are then forwarded by router R3 across the second
+          Ethernet to the destination host. This situation is illustrated in
+          <span class="figure-color">Figure 3.18</span>.
         </p>
         <p>This figure also serves to reinforce two important points:</p>
         <ol>
